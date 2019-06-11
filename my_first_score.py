@@ -9,23 +9,23 @@ c = ClassicalRegister(2)
 # Build the circuit
 score = QuantumCircuit(q, c)
 
-# Pauli operations 
-score.x(q[0])
-score.y(q[1])
-score.z(q[0])
-score.barrier(q)
+# # Pauli operations 
+# score.x(q[0])
+# score.y(q[1])
+# score.z(q[0])
+# score.barrier(q)
 
 #Clifford Operations
 score.h(q)
 score.s(q[0])
 score.s(q[1]).inverse()
 score.cx(q[0], q[1])
-score.barrier(q)
+#score.barrier(q)
 
 #non Clifford Operations
 score.t(q[0])
 score.t(q[1]).inverse()
-score.barrier(q)
+#score.barrier(q)
 
 score.measure(q,c)
 
